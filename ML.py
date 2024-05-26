@@ -69,7 +69,7 @@ def main():
     print("Palabra clave ingresada:", busqueda)
     # Concatenar la palabra clave formateada a la URL base de Mercado Libre
     url = "https://listado.mercadolibre.com.mx/" + busqueda
-    print("URL de búsqueda:", url)
+
     # Asegúrate de que la ruta al chromedriver es correcta
     chromedriver_path = r"C:\Users\Diego-lap\chromedriver-win32\chromedriver-win32\chromedriver.exe"
 
