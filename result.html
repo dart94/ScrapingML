@@ -11,12 +11,35 @@
 
 <body>
     <div class="container">
-        <h1 class="text-center my-4">Resultados de la Búsqueda</h1>
-        <div class="table-responsive">
-            {{ tables|safe }}
+        <header class="d-flex justify-content-between align-items-center py-3">
+            <div class="d-flex align-items-center">
+                <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
+                <h1 class="m-0">Busca Precios</h1>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <h1 class="text-center my-4">Resultados en MercadoLibre</h1>
+            <div class="table-responsive">
+                {{ tables|safe }}
+            </div>
+            <a href="/" class="btn btn-primary btn-block mt-4">Nueva Búsqueda</a>
         </div>
-        <a href="/" class="btn btn-primary btn-block mt-4">Nueva Búsqueda</a>
     </div>
+
+    <footer class="site-footer">
+
+
+        <p> Busca precios. Todos los derechos reservados®</p>
+
+
+    </footer>
 </body>
 
 </html>

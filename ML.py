@@ -66,7 +66,6 @@ def main():
     print("Bienvenido al buscador de productos.")
     palabra = buscar_producto()
     busqueda = formatear_palabra(palabra)
-    print("Palabra clave ingresada:", busqueda)
     # Concatenar la palabra clave formateada a la URL base de Mercado Libre
     url = "https://listado.mercadolibre.com.mx/" + busqueda
 

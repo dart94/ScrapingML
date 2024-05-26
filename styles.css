@@ -2,10 +2,15 @@ body {
     padding-top: 50px;
 }
 
-.container {
-    max-width: 600px;
-    margin: auto;
+.container-fluid {
+    width: 100%;
+    /* Cambia container por container-fluid y establece un ancho del 100% */
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
+
 
 table {
     margin-top: 20px;
@@ -13,4 +18,91 @@ table {
 
 .btn {
     margin-top: 20px;
+}
+
+.header-img {
+    width: 80px;
+    /* Ajusta el tamaño según sea necesario */
+    margin-right: 12px;
+}
+
+/* Header styles */
+header {
+    margin-bottom: 3rem;
+    /* Separación de 3rem */
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    /* Cambia el color de fondo del header */
+    padding: 10px 0;
+    /* Agrega un espacio interno al header */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    /* Cambia el color de los enlaces del header */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 1.5rem;
+    /* Ajusta el tamaño del título según sea necesario */
+    flex-grow: 1;
+    /* Permite que el h1 crezca para ocupar el espacio disponible */
+    text-align: center;
+    /* Centra el texto dentro del h1 */
+    color: #ffffff;
+    /* Cambia el color del texto del header */
+}
+
+.content {
+    max-width: 600px;
+    /* Establecer un ancho máximo para el contenido */
+    margin: auto;
+    /* Centrar horizontalmente el contenido */
+    padding: 0 15px;
+    /* Agregar relleno horizontal para mantener el contenido alineado */
+}
+
+/* Footer styles */
+.site-footer {
+    align-items: center;
+    background-color: #000000;
+    /* Cambia el color de fondo del footer */
+    color: #ffffff;
+    /* Cambia el color del texto del footer */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Footer styles */
+.site-footer {
+    align-items: center;
+    background-color: #000000;
+    /* Cambia el color de fondo del footer */
+    color: #ffffff;
+    /* Cambia el color del texto del footer */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    /* Ajusta el margen superior del footer */
 }
