@@ -1,0 +1,16 @@
+body {
+    padding-top: 50px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+table {
+    margin-top: 20px;
+}
+
+.btn {
+    margin-top: 20px;
+}

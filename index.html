@@ -1,21 +1,23 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador de Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
-        <h1>Buscador de Productos</h1>
-        <form method="post">
+        <h1 class="text-center">Buscador de Productos</h1>
+        <form method="POST">
             <div class="form-group">
                 <label for="palabra">Ingrese una palabra clave:</label>
-                <input type="text" id="palabra" name="palabra" class="form-control" required>
+                <input type="text" class="form-control" id="palabra" name="palabra" required>
             </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
+            <button type="submit" class="btn btn-primary btn-block">Buscar</button>
         </form>
     </div>
 </body>

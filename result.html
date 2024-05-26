@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Búsqueda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Resultados de la Búsqueda</h1>
+        <div class="table-responsive">
+            {{ tables|safe }}
+        </div>
+        <a href="/" class="btn btn-primary btn-block mt-4">Nueva Búsqueda</a>
+    </div>
+</body>
+
+</html>
