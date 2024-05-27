@@ -106,3 +106,15 @@ h1 {
     margin-top: 3rem;
     /* Ajusta el margen superior del footer */
 }
+
+.titulo {
+
+    font-size: 1.5rem;
+    /* Ajusta el tamaño del título según sea necesario */
+    flex-grow: 1;
+    /* Permite que el h1 crezca para ocupar el espacio disponible */
+    text-align: center;
+    /* Centra el texto dentro del h1 */
+    color: #ffffff;
+    /* Cambia el color del texto del header */
+}
