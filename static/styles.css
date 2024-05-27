@@ -1,3 +1,5 @@
+/* Estilos previos */
+
 body {
     padding-top: 50px;
 }
@@ -139,6 +141,8 @@ h1 {
 .button:hover {
     background-color: #4a4a4a;
 }
+
+/* Nuevos estilos para pantallas pequeñas */
 
 @media (max-width: 767px) {
     header {
