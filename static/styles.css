@@ -150,11 +150,4 @@ h1 {
     .nav {
         margin-top: 20px;
     }
-
-    .nav li {
-        margin-right: 0;
-        /* Eliminar el margen derecho */
-        margin-bottom: 10px;
-        /* Añadir un margen inferior */
-    }
 }
