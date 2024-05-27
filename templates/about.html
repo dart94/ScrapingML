@@ -7,35 +7,48 @@
     <title>Buscador de Productos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Agrega tu CSS personalizado aquí */
+    </style>
 </head>
-<div class="container-fluid">
-    <header class="d-flex justify-content-between align-items-center py-3">
-        <div class="d-flex align-items-center">
-            <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
-        </div>
-        <h1 class="m-0 text-center flex-grow-1 titulo">Busca Precios</h1>
-        <nav>
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">Sobre Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link" href="/contact">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-</div>
-
-
-
-<footer class="site-footer">
-
-
-    <p> Busca precios. Todos los derechos reservados®</p>
-
-
-</footer>
 
 <body>
+    <div class="container-fluid">
+        <header class="d-flex justify-content-between align-items-center py-3">
+            <div class="d-flex align-items-center">
+                <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
+            </div>
+            <h1 class="m-0 text-center flex-grow-1 titulo">Busca Precios</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">Sobre Mi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
 
+    <div class="container mt-5 text-center"> <!-- Agrega la clase text-center -->
+        <div class="profile-card">
+            <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" alt="Jessica Randall"
+                class="profile-picture">
+            <h1>Diego Rivera</h1>
+            <p class="location">Hermosillo, México</p>
+            <p class="description">"Developer in progress."</p>
+            <div class="buttons">
+                <a href="https://github.com/dart94" class="button github">GitHub</a>
+                <a href="https://www.linkedin.com/in/diego-rivera-torrero-053932129" class="button">LinkedIn</a>
+                <a href="https://malu-cafe.netlify.app" class="button">Proyecto: Cafeteria</a>
+                <a href="https://bienesraicesdart.netlify.app" class="button">Proyecto: Bienes Raices</a>
+                <a href="https://festival-musica-hmo.netlify.app" class="button">Proyecto: Festival</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>Busca precios. Todos los derechos reservados®</p>
+    </footer>
 </body>
 
 </html>

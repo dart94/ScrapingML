@@ -119,13 +119,17 @@ h1 {
     /* Cambia el color del texto del header */
 }
 
+/* Estilos adicionales para el profile-card */
 .profile-card {
-
     background-color: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     width: 300px;
+    margin: auto;
+    /* Esto centrará el div horizontalmente */
+    margin-top: 50px;
+    /* Ajusta el margen superior según sea necesario */
 }
 
 .profile-picture {
@@ -137,7 +141,7 @@ h1 {
 }
 
 .location {
-    color: #b5e61d;
+    color: #007bff;
     font-size: 14px;
     margin: 5px 0;
 }
@@ -167,7 +171,7 @@ h1 {
 }
 
 .button.github {
-    background-color: #b5e61d;
+    background-color: #007bff;
     color: black;
 }
 
