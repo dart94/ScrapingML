@@ -17,11 +17,26 @@
         <nav>
             <ul class="nav">
                 <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">Sobre Mi</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">Proyectos</a></li>
                 <li class="nav-item"><a class="nav-link" href="/contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
+</div>
+
+<div class="container mt-5 text-center"> <!-- Agrega la clase text-center -->
+    <div class="profile-card">
+        <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" alt="Diego Rivera"
+            class="profile-picture">
+        <h1>Diego Rivera</h1>
+        <p class="location">Hermosillo, México</p>
+        <p class="description">"Developer in progress."</p>
+        <div class="buttons">
+            <a href="https://github.com/dart94" class="button github">GitHub</a>
+            <a href="https://www.linkedin.com/in/diego-rivera-torrero-053932129" class="button">LinkedIn</a>
+            <a href="mailto:riveratorrero@gmail.com">Enviar correo a riveratorrero@gmail.com</a>
+        </div>
+    </div>
 </div>
 
 

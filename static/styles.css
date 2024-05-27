@@ -70,6 +70,17 @@ h1 {
     /* Cambia el color del texto del header */
 }
 
+h1 {
+    font-size: 1.5rem;
+    /* Ajusta el tamaño del título según sea necesario */
+    flex-grow: 1;
+    /* Permite que el h1 crezca para ocupar el espacio disponible */
+    text-align: center;
+    /* Centra el texto dentro del h1 */
+    color: #ffffff;
+    /* Cambia el color del texto del header */
+}
+
 .content {
     max-width: 600px;
     /* Establecer un ancho máximo para el contenido */
