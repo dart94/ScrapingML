@@ -1,0 +1,5 @@
+# Archivo .editorconfig
+
+# Formato de fin de línea
+[*]
+end_of_line = lf
