@@ -118,3 +118,59 @@ h1 {
     color: #ffffff;
     /* Cambia el color del texto del header */
 }
+
+.profile-card {
+
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.location {
+    color: #b5e61d;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.description {
+    color: white;
+    font-size: 14px;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    transition: background-color 0.3s;
+}
+
+.button.github {
+    background-color: #b5e61d;
+    color: black;
+}
+
+.button:hover {
+    background-color: #4a4a4a;
+}
