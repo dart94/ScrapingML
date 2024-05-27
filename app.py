@@ -1,12 +1,7 @@
 from flask import Flask, request, render_template
 import pandas as pd
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+import requests
 from bs4 import BeautifulSoup as bs
-from selenium.webdriver.chrome.options import Options
 import re
 import traceback
 
@@ -24,15 +19,14 @@ def limpiar_texto(texto):
     return re.sub(r'\s+', ' ', texto.strip())
 
 
-def obtener_tabla(url, driver):
+def obtener_tabla(url):
     try:
-        driver.get(url)
-        WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located(
-                (By.CSS_SELECTOR, "li.ui-search-layout__item"))
-        )
-
-        contenido = driver.page_source
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+        }
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Check if the request was successful
+        contenido = response.text
         soup = bs(contenido, "html.parser")
 
         productos = []
@@ -69,28 +63,21 @@ def index():
         busqueda = formatear_palabra(palabra)
         url = "https://listado.mercadolibre.com.mx/" + busqueda
 
-        chromedriver_path = r"C:\Users\Diego-lap\chromedriver-win32\chromedriver-win32\chromedriver.exe"
-        options = Options()
-        options.add_argument("--headless")
-        options.add_argument("--disable-gpu")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--window-size=1280,1024")
-        options.add_argument(
-            "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3")
-        service = Service(executable_path=chromedriver_path)
-
-        driver = webdriver.Chrome(service=service, options=options)
-        driver.implicitly_wait(5)  # Añade una espera implícita global
-
-        try:
-            df = obtener_tabla(url, driver)
-        finally:
-            driver.quit()
+        df = obtener_tabla(url)
 
         return render_template('result.html', tables=df.to_html(classes='table table-striped', header="true", index=False))
 
     return render_template('index.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 
 if __name__ == "__main__":
