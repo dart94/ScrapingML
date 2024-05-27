@@ -31,7 +31,6 @@ header {
     margin-bottom: 3rem;
     /* Separación de 3rem */
     display: flex;
-    flex-direction: column;
     align-items: center;
     background-color: #000000;
     /* Cambia el color de fondo del header */
