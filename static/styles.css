@@ -4,15 +4,13 @@ body {
 
 .container-fluid {
     width: 100%;
-    /* Cambia container por container-fluid y establece un ancho del 100% */
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
 
-
-table {
+.table {
     margin-top: 20px;
 }
 
@@ -22,20 +20,16 @@ table {
 
 .header-img {
     width: 80px;
-    /* Ajusta el tamaño según sea necesario */
     margin-right: 12px;
 }
 
-/* Header styles */
 header {
     margin-bottom: 3rem;
-    /* Separación de 3rem */
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: #000000;
-    /* Cambia el color de fondo del header */
     padding: 10px 0;
-    /* Agrega un espacio interno al header */
 }
 
 nav ul {
@@ -52,7 +46,6 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #ffffff;
-    /* Cambia el color de los enlaces del header */
 }
 
 nav ul li a:hover {
@@ -61,76 +54,35 @@ nav ul li a:hover {
 
 h1 {
     font-size: 1.5rem;
-    /* Ajusta el tamaño del título según sea necesario */
     flex-grow: 1;
-    /* Permite que el h1 crezca para ocupar el espacio disponible */
     text-align: center;
-    /* Centra el texto dentro del h1 */
-    color: #000000;
-    /* Cambia el color del texto del header */
-}
-
-h1 {
-    font-size: 1.5rem;
-    /* Ajusta el tamaño del título según sea necesario */
-    flex-grow: 1;
-    /* Permite que el h1 crezca para ocupar el espacio disponible */
-    text-align: center;
-    /* Centra el texto dentro del h1 */
     color: #ffffff;
-    /* Cambia el color del texto del header */
 }
 
 .content {
     max-width: 600px;
-    /* Establecer un ancho máximo para el contenido */
     margin: auto;
-    /* Centrar horizontalmente el contenido */
     padding: 0 15px;
-    /* Agregar relleno horizontal para mantener el contenido alineado */
 }
 
-/* Footer styles */
 .site-footer {
     align-items: center;
     background-color: #000000;
-    /* Cambia el color de fondo del footer */
     color: #ffffff;
-    /* Cambia el color del texto del footer */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 1rem;
-}
-
-/* Footer styles */
-.site-footer {
-    align-items: center;
-    background-color: #000000;
-    /* Cambia el color de fondo del footer */
-    color: #ffffff;
-    /* Cambia el color del texto del footer */
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 1rem;
     margin-top: 3rem;
-    /* Ajusta el margen superior del footer */
 }
 
 .titulo {
-
     font-size: 1.5rem;
-    /* Ajusta el tamaño del título según sea necesario */
     flex-grow: 1;
-    /* Permite que el h1 crezca para ocupar el espacio disponible */
     text-align: center;
-    /* Centra el texto dentro del h1 */
     color: #ffffff;
-    /* Cambia el color del texto del header */
 }
 
-/* Estilos adicionales para el profile-card */
 .profile-card {
     background-color: #1e1e1e;
     padding: 20px;
@@ -138,9 +90,7 @@ h1 {
     text-align: center;
     width: 300px;
     margin: auto;
-    /* Esto centrará el div horizontalmente */
     margin-top: 50px;
-    /* Ajusta el margen superior según sea necesario */
 }
 
 .profile-picture {
@@ -188,4 +138,16 @@ h1 {
 
 .button:hover {
     background-color: #4a4a4a;
+}
+
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav {
+        margin-top: 20px;
+    }
 }
