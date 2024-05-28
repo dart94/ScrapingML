@@ -25,16 +25,12 @@ def obtener_tabla(url):
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
         }
         response = requests.get(url, headers=headers)
-        response.raise_for_status()  # Check if the request was successful
-        contenido = response.text
-        soup = bs(contenido, "html.parser")
+        response.raise_for_status()
+        soup = bs(response.content, "html.parser")
 
-        productos = []
-        precios = []
+        productos, precios, enlaces = [], [], []
+        contenedores_tarjetas = soup.find_all("li", class_="ui-search-layout__item")[:10]
 
-        contenedores_tarjetas = soup.find_all(
-            # Limita a 10 resultados
-            "li", class_="ui-search-layout__item")[:10]
         for tarjeta in contenedores_tarjetas:
             nombre_producto_elemento = tarjeta.select_one(
                 "div.ui-search-result__content-wrapper > div.ui-search-item__group.ui-search-item__group--title > a.ui-search-item__group__element.ui-search-link"
@@ -49,11 +45,20 @@ def obtener_tabla(url):
                 precio_elemento.text) if precio_elemento else "No disponible"
             precios.append(precio)
 
-        df = pd.DataFrame({"Producto": productos, "Precio": precios})
+            enlace_producto = nombre_producto_elemento['href'] if nombre_producto_elemento else "No disponible"
+            enlaces.append(enlace_producto)
+
+        df = pd.DataFrame({"Producto": productos, "Precio": precios, "Enlace": enlaces})
+
+        # Formatear los enlaces como HTML clicable
+        df['Enlace'] = df['Enlace'].apply(lambda x: f'<a href="{x}" target="_blank">Ver Producto</a>' if x != "No disponible" else x)
+        
         return df
     except Exception as e:
         traceback.print_exc()
-        return pd.DataFrame({"Producto": ["Error"], "Precio": ["Error"]})
+        return pd.DataFrame({"Producto": ["Error"], "Precio": ["Error"], "Enlace": ["Error"]})
+
+
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -65,7 +70,11 @@ def index():
 
         df = obtener_tabla(url)
 
-        return render_template('result.html', tables=df.to_html(classes='table table-striped', header="true", index=False))
+        if 'Error' in df['Producto'].values:
+            error_message = "Hubo un problema al obtener los datos. Por favor, intenta nuevamente."
+            return render_template('index.html', error=error_message)
+        
+        return render_template('result.html', tables=df.to_html(classes='table table-striped', header="true", index=False, escape=False))
 
     return render_template('index.html')
 
