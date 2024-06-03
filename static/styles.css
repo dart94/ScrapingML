@@ -1,34 +1,37 @@
+/* Estilos previos */
+
 body {
-    margin: 0;
-    font-family: "Roboto", sans-serif;
+    padding-top: 50px;
 }
 
 .container-fluid {
+    width: 100%;
     padding-right: 15px;
     padding-left: 15px;
-    width: 100%;
     margin-right: auto;
     margin-left: auto;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000000;
-    padding: 10px 0;
-    width: 100%;
-    position: fixed;
-    /* Fija el header en la parte superior */
-    top: 0;
-    /* Ubica el header en la parte superior */
-    z-index: 1000;
-    /* Asegura que el header esté por encima de otros elementos */
+.table {
+    margin-top: 20px;
+}
+
+.btn {
+    margin-top: 20px;
 }
 
 .header-img {
     width: 80px;
     margin-right: 12px;
+}
+
+header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 0;
 }
 
 nav ul {
@@ -58,6 +61,23 @@ h1 {
     color: #ffffff;
 }
 
+.content {
+    max-width: 600px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.site-footer {
+    align-items: center;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
 .titulo {
     font-size: 1.5rem;
     flex-grow: 1;
@@ -65,45 +85,73 @@ h1 {
     color: #ffffff;
 }
 
+.profile-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.location {
+    color: #007bff;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.description {
+    color: white;
+    font-size: 14px;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    transition: background-color 0.3s;
+}
+
+.button.github {
+    background-color: #007bff;
+    color: black;
+}
+
+.button:hover {
+    background-color: #4a4a4a;
+}
+
+/* Nuevos estilos para pantallas pequeñas */
+
 @media (max-width: 767px) {
     header {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 10px;
-    }
-
-    .header-img {
-        margin-bottom: 10px;
-    }
-
-    .titulo {
-        margin-bottom: 10px;
     }
 
     .nav {
-        margin-top: 10px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .titulo {
-        font-size: 1.25rem;
-    }
-
-    .header-img {
-        width: 60px;
-        margin-bottom: 8px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
+        margin-top: 20px;
     }
 }
