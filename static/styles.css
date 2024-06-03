@@ -1,15 +1,15 @@
-/* Estilos previos */
-
 body {
     padding-top: 50px;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 .container-fluid {
-    width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    width: 100%;
 }
 
 .table {
@@ -32,6 +32,7 @@ header {
     align-items: center;
     background-color: #000000;
     padding: 10px 0;
+    width: 100%;
 }
 
 nav ul {
@@ -142,16 +143,45 @@ h1 {
     background-color: #4a4a4a;
 }
 
-/* Nuevos estilos para pantallas pequeñas */
-
 @media (max-width: 767px) {
     header {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 10px;
+    }
+
+    .header-img {
+        margin-bottom: 10px;
+    }
+
+    .titulo {
+        margin-bottom: 10px;
     }
 
     .nav {
-        margin-top: 20px;
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 1.25rem;
+    }
+
+    .header-img {
+        width: 60px;
+        margin-bottom: 8px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
     }
 }
