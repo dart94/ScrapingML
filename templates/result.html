@@ -23,12 +23,21 @@
             </ul>
         </nav>
     </header>
-    </div>
 
     <div class="container">
         <h2 class="text-center my-4">Resultados en MercadoLibre</h2>
-        <div class="table-responsive">
-            {{ tables|safe }}
+        <div class="row">
+            {% for producto in productos %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ producto.nombre }}</h5>
+                        <p class="card-text">{{ producto.precio }}</p>
+                        <a href="{{ producto.enlace }}" class="btn btn-primary" target="_blank">Ver Producto</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
         <a href="/" class="btn btn-primary btn-block mt-4">Nueva Búsqueda</a>
     </div>

@@ -7,19 +7,16 @@ import traceback
 
 app = Flask(__name__)
 
-
 def formatear_palabra(palabra):
     palabra = palabra.lower()
     palabra = palabra.replace(" ", "-")
     resultado = f"{palabra}#D[A:{palabra}]"
     return resultado
 
-
 def limpiar_texto(texto):
     return re.sub(r'\s+', ' ', texto.strip())
 
-
-def obtener_tabla(url):
+def obtener_productos(url):
     try:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
@@ -28,7 +25,7 @@ def obtener_tabla(url):
         response.raise_for_status()
         soup = bs(response.content, "html.parser")
 
-        productos, precios, enlaces = [], [], []
+        productos = []
         contenedores_tarjetas = soup.find_all("li", class_="ui-search-layout__item")[:10]
 
         for tarjeta in contenedores_tarjetas:
@@ -37,29 +34,24 @@ def obtener_tabla(url):
             )
             nombre_producto = limpiar_texto(
                 nombre_producto_elemento.text) if nombre_producto_elemento else "No disponible"
-            productos.append(nombre_producto)
 
             precio_elemento = tarjeta.select_one(
                 "span.andes-money-amount__fraction")
             precio = limpiar_texto(
                 precio_elemento.text) if precio_elemento else "No disponible"
-            precios.append(precio)
 
-            enlace_producto = nombre_producto_elemento['href'] if nombre_producto_elemento else "No disponible"
-            enlaces.append(enlace_producto)
+            enlace_producto = nombre_producto_elemento['href'] if nombre_producto_elemento else "#"
 
-        df = pd.DataFrame({"Producto": productos, "Precio": precios, "Enlace": enlaces})
+            productos.append({
+                "nombre": nombre_producto,
+                "precio": precio,
+                "enlace": enlace_producto
+            })
 
-        # Formatear los enlaces como HTML clicable
-        df['Enlace'] = df['Enlace'].apply(lambda x: f'<a href="{x}" target="_blank">Ver Producto</a>' if x != "No disponible" else x)
-        
-        return df
+        return productos
     except Exception as e:
         traceback.print_exc()
-        return pd.DataFrame({"Producto": ["Error"], "Precio": ["Error"], "Enlace": ["Error"]})
-
-
-
+        return []
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -68,26 +60,23 @@ def index():
         busqueda = formatear_palabra(palabra)
         url = "https://listado.mercadolibre.com.mx/" + busqueda
 
-        df = obtener_tabla(url)
+        productos = obtener_productos(url)
 
-        if 'Error' in df['Producto'].values:
+        if not productos:
             error_message = "Hubo un problema al obtener los datos. Por favor, intenta nuevamente."
             return render_template('index.html', error=error_message)
-        
-        return render_template('result.html', tables=df.to_html(classes='table table-striped', header="true", index=False, escape=False))
+
+        return render_template('result.html', productos=productos)
 
     return render_template('index.html')
-
 
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
-
 
 if __name__ == "__main__":
     app.run(debug=True)

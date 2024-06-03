@@ -1,6 +1,5 @@
 /* Estilos previos */
 
-
 .container-fluid {
     width: 100%;
     padding-right: 15px;
@@ -82,61 +81,32 @@ h1 {
     color: #ffffff;
 }
 
-.profile-card {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
+/* Nuevos estilos para las tarjetas */
+
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
     text-align: center;
-    width: 300px;
-    margin: auto;
-    margin-top: 50px;
 }
 
-.profile-picture {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
-.location {
-    color: #007bff;
-    font-size: 14px;
-    margin: 5px 0;
-}
-
-.description {
-    color: white;
-    font-size: 14px;
-    margin: 10px 0;
-    font-style: italic;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.button {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    background-color: #3a3a3a;
-    transition: background-color 0.3s;
-}
-
-.button.github {
-    background-color: #007bff;
-    color: black;
-}
-
-.button:hover {
-    background-color: #4a4a4a;
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* Nuevos estilos para pantallas pequeñas */
