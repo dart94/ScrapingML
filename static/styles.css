@@ -1,7 +1,5 @@
 body {
     margin: 0;
-    padding-top: 70px;
-    /* Para asegurar que el contenido no quede detrás del header */
     font-family: "Roboto", sans-serif;
 }
 
@@ -14,17 +12,16 @@ body {
 }
 
 header {
-    position: fixed;
-    /* Fija el header en la parte superior */
-    top: 0;
-    /* Ubica el header en la parte superior */
-    width: 100%;
-    /* Asegura que ocupe todo el ancho de la pantalla */
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #000000;
     padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    /* Fija el header en la parte superior */
+    top: 0;
+    /* Ubica el header en la parte superior */
     z-index: 1000;
     /* Asegura que el header esté por encima de otros elementos */
 }
@@ -66,23 +63,6 @@ h1 {
     flex-grow: 1;
     text-align: center;
     color: #ffffff;
-}
-
-.content {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px 15px;
-}
-
-.site-footer {
-    align-items: center;
-    background-color: #000000;
-    color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 1rem;
-    margin-top: 3rem;
 }
 
 @media (max-width: 767px) {
