@@ -1,24 +1,38 @@
-/* Estilos previos */
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-light-gray: #f8f9fa;
+    --color-gray: #dee2e6;
+    --color-blue: #007bff;
+    --color-dark-gray: #1e1e1e;
+    --color-button-gray: #3a3a3a;
+
+    --spacing-small: 10px;
+    --spacing-medium: 15px;
+    --spacing-large: 20px;
+
+    --font-size-small: 0.875rem;
+    --font-size-medium: 1rem;
+    --font-size-large: 1.25rem;
+    --font-size-xlarge: 1.5rem;
+}
 
 .container-fluid {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: var(--spacing-medium);
+    padding-left: var(--spacing-medium);
     margin-right: auto;
     margin-left: auto;
 }
 
-.table {
-    margin-top: 20px;
-}
-
+.table,
 .btn {
-    margin-top: 20px;
+    margin-top: var(--spacing-large);
 }
 
 .header-img {
     width: 80px;
-    margin-right: 12px;
+    margin-right: var(--spacing-medium);
 }
 
 header {
@@ -26,8 +40,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
-    padding: 10px 0;
+    background-color: var(--color-black);
+    padding: var(--spacing-small) 0;
 }
 
 nav ul {
@@ -38,12 +52,12 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 15px;
+    margin-right: var(--spacing-medium);
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 nav ul li a:hover {
@@ -51,41 +65,39 @@ nav ul li a:hover {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: var(--font-size-xlarge);
     flex-grow: 1;
     text-align: center;
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .content {
     max-width: 600px;
     margin: auto;
-    padding: 0 15px;
+    padding: 0 var(--spacing-medium);
 }
 
 .site-footer {
     align-items: center;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--color-black);
+    color: var(--color-white);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 1rem;
+    padding: var(--spacing-large);
     margin-top: 3rem;
 }
 
 .titulo {
-    font-size: 1.5rem;
+    font-size: var(--font-size-xlarge);
     flex-grow: 1;
     text-align: center;
-    color: #ffffff;
+    color: var(--color-white);
 }
 
-/* Nuevos estilos para las tarjetas */
-
 .card {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    background-color: var(--color-light-gray);
+    border: 1px solid var(--color-gray);
     border-radius: 0.25rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
@@ -107,36 +119,32 @@ h1 {
 }
 
 .card-title {
-    font-size: 1.25rem;
+    font-size: var(--font-size-large);
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-large);
 }
 
 .card-text {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--spacing-large);
 }
 
 .card a.btn {
     margin-top: auto;
 }
 
-/* Estilos para el contenedor de las tarjetas */
-
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: var(--spacing-large);
     justify-content: center;
 }
 
 .card-container .card {
-    flex: 1 1 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
+    flex: 1 1 calc(33.333% - var(--spacing-large));
+    max-width: calc(33.333% - var(--spacing-large));
     box-sizing: border-box;
 }
-
-/* Nuevos estilos para pantallas pequeñas */
 
 @media (max-width: 767px) {
     header {
@@ -146,26 +154,25 @@ h1 {
     }
 
     .nav {
-        margin-top: 20px;
+        margin-top: var(--spacing-large);
     }
 
     .card-container .card {
-        flex: 1 1 calc(100% - 20px);
-        max-width: calc(100% - 20px);
+        flex: 1 1 calc(100% - var(--spacing-large));
+        max-width: calc(100% - var(--spacing-large));
     }
 
     .container .d-flex {
         flex-direction: column;
-        padding: 1rem;
+        padding: var(--spacing-large);
     }
 
     .container .d-flex img {
         margin-left: 0;
-        margin-top: 10px;
+        margin-top: var(--spacing-small);
     }
 }
 
-/* Nuevos estilos para alinear título e imagen */
 .container .d-flex {
     display: flex;
     justify-content: center;
@@ -177,19 +184,18 @@ h1 {
 }
 
 .container .d-flex img {
-    margin-left: 15px;
+    margin-left: var(--spacing-medium);
 }
 
-
 main .text-center {
-    padding: 20px;
-    background-color: #f8f9fa;
+    padding: var(--spacing-large);
+    background-color: var(--color-light-gray);
     border-radius: 8px;
 }
 
 .search-section .content {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray);
     border-radius: 8px;
 }
 
@@ -197,10 +203,9 @@ main .text-center {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-
 .profile-card {
-    background-color: #1e1e1e;
-    padding: 20px;
+    background-color: var(--color-dark-gray);
+    padding: var(--spacing-large);
     border-radius: 10px;
     text-align: center;
     width: 300px;
@@ -213,18 +218,18 @@ main .text-center {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-large);
 }
 
 .location {
-    color: #007bff;
-    font-size: 14px;
+    color: var(--color-blue);
+    font-size: var(--font-size-small);
     margin: 5px 0;
 }
 
 .description {
-    color: white;
-    font-size: 14px;
+    color: var(--color-white);
+    font-size: var(--font-size-small);
     margin: 10px 0;
     font-style: italic;
 }
@@ -232,21 +237,21 @@ main .text-center {
 .buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: var(--spacing-small);
 }
 
 .button {
     display: block;
     width: 100%;
-    padding: 10px 0;
-    color: white;
+    padding: var(--spacing-small) 0;
+    color: var(--color-white);
     text-decoration: none;
     border-radius: 5px;
-    background-color: #3a3a3a;
+    background-color: var(--color-button-gray);
     transition: background-color 0.3s;
 }
 
 .button.github {
-    background-color: #007bff;
-    color: black;
+    background-color: var(--color-blue);
+    color: var(--color-black);
 }
