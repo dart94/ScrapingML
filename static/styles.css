@@ -1,38 +1,33 @@
-:root {
-    --primary-color: #007bff;
-    --secondary-color: #f8f9fa;
-    --dark-color: #000000;
-    --light-color: #ffffff;
-    --border-color: #dee2e6;
-    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    --transition-duration: 0.2s;
-}
+/* Estilos previos */
 
-/* Contenedor */
 .container-fluid {
     width: 100%;
-    padding: 0 15px;
-    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.table,
-.btn {
+.table {
     margin-top: 20px;
 }
 
-/* Encabezado */
-header {
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--dark-color);
-    padding: 10px 0;
+.btn {
+    margin-top: 20px;
 }
 
 .header-img {
     width: 80px;
     margin-right: 12px;
+}
+
+header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 0;
 }
 
 nav ul {
@@ -48,7 +43,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--light-color);
+    color: #ffffff;
 }
 
 nav ul li a:hover {
@@ -59,7 +54,7 @@ h1 {
     font-size: 1.5rem;
     flex-grow: 1;
     text-align: center;
-    color: var(--light-color);
+    color: #ffffff;
 }
 
 .content {
@@ -69,11 +64,12 @@ h1 {
 }
 
 .site-footer {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: var(--dark-color);
-    color: var(--light-color);
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding: 1rem;
     margin-top: 3rem;
 }
@@ -82,16 +78,17 @@ h1 {
     font-size: 1.5rem;
     flex-grow: 1;
     text-align: center;
-    color: var(--light-color);
+    color: #ffffff;
 }
 
-/* Tarjetas */
+/* Nuevos estilos para las tarjetas */
+
 .card {
-    background-color: var(--secondary-color);
-    border: 1px solid var(--border-color);
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
     border-radius: 0.25rem;
-    box-shadow: var(--box-shadow);
-    transition: transform var(--transition-duration);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -124,6 +121,8 @@ h1 {
     margin-top: auto;
 }
 
+/* Estilos para el contenedor de las tarjetas */
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -137,7 +136,8 @@ h1 {
     box-sizing: border-box;
 }
 
-/* Media Queries */
+/* Nuevos estilos para pantallas pequeñas */
+
 @media (max-width: 767px) {
     header {
         flex-direction: column;
@@ -145,7 +145,7 @@ h1 {
         text-align: center;
     }
 
-    nav {
+    .nav {
         margin-top: 20px;
     }
 
@@ -165,6 +165,7 @@ h1 {
     }
 }
 
+/* Nuevos estilos para alinear título e imagen */
 .container .d-flex {
     display: flex;
     justify-content: center;
@@ -179,15 +180,16 @@ h1 {
     margin-left: 15px;
 }
 
+
 main .text-center {
     padding: 20px;
-    background-color: var(--secondary-color);
+    background-color: #f8f9fa;
     border-radius: 8px;
 }
 
 .search-section .content {
-    background-color: var(--light-color);
-    border: 1px solid var(--border-color);
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
     border-radius: 8px;
 }
 
@@ -195,14 +197,15 @@ main .text-center {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* Perfil */
+
 .profile-card {
     background-color: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     width: 300px;
-    margin: 50px auto 0;
+    margin: auto;
+    margin-top: 50px;
 }
 
 .profile-picture {
@@ -214,13 +217,13 @@ main .text-center {
 }
 
 .location {
-    color: var(--primary-color);
+    color: #007bff;
     font-size: 14px;
     margin: 5px 0;
 }
 
 .description {
-    color: var(--light-color);
+    color: white;
     font-size: 14px;
     margin: 10px 0;
     font-style: italic;
@@ -236,7 +239,7 @@ main .text-center {
     display: block;
     width: 100%;
     padding: 10px 0;
-    color: var(--light-color);
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     background-color: #3a3a3a;
@@ -244,6 +247,6 @@ main .text-center {
 }
 
 .button.github {
-    background-color: var(--primary-color);
-    color: #000;
+    background-color: #007bff;
+    color: black;
 }
