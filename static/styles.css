@@ -89,6 +89,9 @@ h1 {
     border-radius: 0.25rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card:hover {
@@ -97,16 +100,40 @@ h1 {
 
 .card-body {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .card-title {
     font-size: 1.25rem;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .card-text {
     font-size: 1rem;
     margin-bottom: 1rem;
+}
+
+.card a.btn {
+    margin-top: auto;
+}
+
+/* Estilos para el contenedor de las tarjetas */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card-container .card {
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    box-sizing: border-box;
 }
 
 /* Nuevos estilos para pantallas pequeñas */
@@ -120,5 +147,10 @@ h1 {
 
     .nav {
         margin-top: 20px;
+    }
+
+    .card-container .card {
+        flex: 1 1 calc(100% - 20px);
+        max-width: calc(100% - 20px);
     }
 }
