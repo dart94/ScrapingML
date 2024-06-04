@@ -180,7 +180,6 @@ h1 {
     margin-left: 15px;
 }
 
-
 main .text-center {
     padding: 20px;
     background-color: #f8f9fa;
@@ -196,7 +195,6 @@ main .text-center {
 .shadow-sm {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
-
 
 .profile-card {
     background-color: #1e1e1e;
@@ -249,4 +247,31 @@ main .text-center {
 .button.github {
     background-color: #007bff;
     color: black;
+}
+
+/* Estilos para el indicador de carga */
+.loader {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

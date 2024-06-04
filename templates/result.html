@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados de la Búsqueda</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Indicador de carga -->
+    <div id="loader" class="loader" style="display: none;"></div>
+
     <header class="container-fluid d-flex justify-content-between align-items-center py-3">
         <div class="d-flex align-items-center">
             <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
@@ -46,6 +49,8 @@
     <footer class="site-footer">
         <p>Busca precios. Todos los derechos reservados®</p>
     </footer>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 
 </html>
