@@ -153,4 +153,46 @@ h1 {
         flex: 1 1 calc(100% - 20px);
         max-width: calc(100% - 20px);
     }
+
+    .container .d-flex {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .container .d-flex img {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Nuevos estilos para alinear título e imagen */
+.container .d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .d-flex h2 {
+    margin: 0;
+}
+
+.container .d-flex img {
+    margin-left: 15px;
+}
+
+
+main .text-center {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.search-section .content {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+.shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }

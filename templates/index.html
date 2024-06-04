@@ -24,22 +24,31 @@
         </nav>
     </header>
 
-    <div class="content">
-        {% if error %}
-        <div class="alert alert-danger" role="alert">
-            {{ error }}
-        </div>
-        {% endif %}
-        <form method="POST">
-            <div class="form-group">
-                <label for="palabra">Ingresa un producto:</label>
-                <input type="text" class="form-control" id="palabra" name="palabra" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Buscar</button>
-        </form>
-    </div>
+    <main class="container">
+        <section class="text-center mt-5">
+            <h2>¡Bienvenido a Busca Precios!</h2>
+            <p class="lead">Tu herramienta ideal para encontrar los mejores productos y precios en MercadoLibre.</p>
+        </section>
 
-    <footer class="site-footer">
+        <section class="search-section mt-4">
+            <div class="content p-4 shadow-sm rounded">
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endif %}
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="palabra">Ingresa un producto:</label>
+                        <input type="text" class="form-control" id="palabra" name="palabra" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Buscar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer mt-5 p-4 text-center">
         <p>Busca precios. Todos los derechos reservados®</p>
     </footer>
 </body>
