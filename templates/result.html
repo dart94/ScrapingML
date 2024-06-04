@@ -30,8 +30,8 @@
             {% for producto in productos %}
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ producto.nombre }}</h5>
-                    <p class="card-text">{{ producto.precio }}</p>
+                    <h5 class="card-title"><strong>Producto:</strong>{{ producto.nombre }}</h5>
+                    <p class="card-text"><strong>Precio:'$'</strong>{{ producto.precio }}</p>
                     <a href="{{ producto.enlace }}" class="btn btn-primary" target="_blank">Ver Producto</a>
                 </div>
             </div>
