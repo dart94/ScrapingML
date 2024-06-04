@@ -196,3 +196,57 @@ main .text-center {
 .shadow-sm {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
+
+
+.profile-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.location {
+    color: #007bff;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.description {
+    color: white;
+    font-size: 14px;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    transition: background-color 0.3s;
+}
+
+.button.github {
+    background-color: #007bff;
+    color: black;
+}
