@@ -44,7 +44,7 @@ body.light-theme {
 
 body.dark-theme {
     background-color: var(--color-background-dark);
-    color: var(--color-text-dark);
+    color: #000000;
     --color-black: #000000;
     --color-white: #ffffff;
     --color-light-gray: #1e1e1e;
@@ -114,7 +114,7 @@ body.dark-theme .card-body {
     justify-content: space-between;
     height: 100%;
     padding: var(--spacing-medium);
-    background-color: (var(--color-button-gray));
+    background-color: var(--color-dark-gray)
 }
 
 .container-fluid {
