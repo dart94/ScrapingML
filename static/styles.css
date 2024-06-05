@@ -23,6 +23,11 @@
     --font-size-medium: 1rem;
     --font-size-large: 1.25rem;
     --font-size-xlarge: 1.5rem;
+
+    --color-background-light: #ffffff;
+    --color-text-light: #000000;
+    --color-background-dark: #1e1e1e;
+    --color-text-dark: #ffffff;
 }
 
 body {
@@ -30,6 +35,30 @@ body {
     background-color: var(--color-light-gray);
     margin: 0;
     padding: 0;
+}
+
+body.light-theme {
+    background-color: var(--color-background-light);
+    color: var(--color-text-light);
+}
+
+body.dark-theme {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-dark);
+}
+
+button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: var(--spacing-small) var(--spacing-medium);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
 }
 
 .container-fluid {
