@@ -47,11 +47,6 @@ body.dark-theme {
     color: var(--color-text-dark);
 }
 
-body.dark-theme main.text-center {
-    padding: var(--spacing-large);
-    background-color: var(--color-button-gray);
-    border-radius: 8px;
-}
 
 
 button {
@@ -240,6 +235,22 @@ h1 {
 main .text-center {
     padding: var(--spacing-large);
     background-color: var(--color-light);
+    border-radius: 8px;
+}
+
+body.dark-theme .search-section .content {
+    background-color: var(--color-dark-gray);
+    border: 1px solid var(--color-gray);
+    border-radius: 8px;
+    padding: var(--spacing-medium);
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+    /* Cambia el color de la sombra para que se vea en contraste con el fondo oscuro */
+}
+
+body.dark-theme main .text-center {
+    padding: var(--spacing-large);
+    background-color: var(--color-dark);
+    /* Cambia el color de fondo */
     border-radius: 8px;
 }
 
