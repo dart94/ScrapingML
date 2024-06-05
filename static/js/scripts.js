@@ -49,7 +49,41 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.getElementById('theme-toggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-    document.body.classList.toggle('light-theme');
+document.addEventListener('DOMContentLoaded', function () {
+
+    eventListeners();
+
+    darkMode();
 });
+
+function darkMode() {
+    const prefiereDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // console.log(prefiereDarkMode.matches);
+
+    if (prefiereDarkMode.matches) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+
+    prefiereDarkMode.addEventListener('change', function () {
+        if (prefiereDarkMode.matches) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+
+    });
+    const botonDarkMode = document.querySelector('.dark-mode-boton');
+    botonDarkMode.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+
+        // Guardar el estado del modo oscuro en localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+}
