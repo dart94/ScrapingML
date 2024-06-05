@@ -50,12 +50,12 @@ body.dark-theme {
     --color-light-gray: #1e1e1e;
     --color-gray: #343a40;
     --color-blue: #17a2b8;
-    --color-dark-gray: #f8f9fa;
+    --color-dark-gray: #f8f9fa14;
     --color-button-gray: #6c757d;
     --color-primary: #17a2b8;
     --color-secondary: #6c757d;
     --color-light: #dee2e6;
-    --color-dark: #f8f9fa;
+    --color-dark: #00000000;
     --color-background-light: var(--color-background-dark);
     --color-text-light: var(--color-text-dark);
 }
