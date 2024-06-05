@@ -40,10 +40,18 @@
                 <form method="POST">
                     <div class="form-group">
                         <label for="palabra">Ingresa un producto:</label>
-                        <input type="text" class="form-control" id="palabra" name="palabra" required>
+                        <input type="text" class="form-control" id="palabra" name="palabra" list="suggestions" required>
+                        <datalist id="suggestions">
+                            <!-- Agrega opciones de ejemplo -->
+                            <option value="Laptop">
+                            <option value="Smartphone">
+                            <option value="Headphones">
+                            <option value="Camera">
+                        </datalist>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Buscar</button>
                 </form>
+                <div id="spinner" class="spinner" style="display: none;"></div>
             </div>
         </section>
     </main>

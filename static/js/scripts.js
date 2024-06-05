@@ -2,13 +2,28 @@ document.addEventListener('DOMContentLoaded', function () {
     // Validación de formularios
     const searchForm = document.querySelector('form');
     const searchInput = document.getElementById('palabra');
+    const spinner = document.getElementById('spinner');
+    const alertContainer = document.createElement('div');
 
-    searchForm.addEventListener('submit', function (event) {
-        if (searchInput.value.trim() === '') {
-            event.preventDefault();
-            alert('Por favor, ingrese un producto para buscar.');
-        }
-    });
+    if (searchForm) {
+        searchForm.prepend(alertContainer);
+
+        searchForm.addEventListener('submit', function (event) {
+            if (searchInput.value.trim() === '') {
+                event.preventDefault();
+                alertContainer.innerHTML = `
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Por favor, ingrese un producto para buscar.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                `;
+            } else {
+                spinner.style.display = 'block';
+            }
+        });
+    }
 
     // Animación de tarjetas
     const cards = document.querySelectorAll('.card');
@@ -29,16 +44,4 @@ document.addEventListener('DOMContentLoaded', function () {
         loadingMessage.style.fontWeight = 'bold';
         searchForm.append(loadingMessage);
     });
-});
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const searchForm = document.getElementById('search-form');
-    const loader = document.getElementById('loader');
-
-    if (searchForm) {
-        searchForm.addEventListener('submit', function () {
-            loader.style.display = 'block';
-        });
-    }
 });
