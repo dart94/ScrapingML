@@ -15,18 +15,14 @@
             <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
             <h1 class="m-0 titulo">Busca Precios</h1>
         </div>
-
-        <div class="derecha">
-            <!-- Añadir la clase 'dark-mode-boton' al botón de modo oscuro -->
-            <img class="dark-mode-boton" src="/static/img/dark-mode.svg" alt="Modo oscuro">
-            <nav class="nav-links">
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about">PriceVista</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about">Sobre Mi</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="nav-links">
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">PriceVista</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">Sobre Mi</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle">Modo Oscuro</button>
     </header>
 
     <main class="container">
