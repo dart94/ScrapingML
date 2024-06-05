@@ -47,6 +47,13 @@ body.dark-theme {
     color: var(--color-text-dark);
 }
 
+body.dark-theme main.text-center {
+    padding: var(--spacing-large);
+    background-color: var(--color-button-gray);
+    border-radius: 8px;
+}
+
+
 button {
     background-color: var(--color-primary);
     color: var(--color-white);
