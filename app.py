@@ -36,7 +36,7 @@ def obtener_productos(url):
                 nombre_producto_elemento.text) if nombre_producto_elemento else "No disponible"
 
             precio_elemento = tarjeta.select_one(
-                "andes-money-amount ui-pdp-price__part andes-money-amount--cents-superscript andes-money-amount--compact")
+                "span.andes-money-amount__fraction")
             precio = limpiar_texto(
                 precio_elemento.text) if precio_elemento else "No disponible"
 
