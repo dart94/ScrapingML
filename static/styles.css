@@ -107,6 +107,16 @@ body.dark-theme .search-section .content {
     box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
 }
 
+body.dark-theme .card-body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: var(--spacing-medium);
+    background-color: (var(--color-button-gray));
+}
+
 .container-fluid {
     width: 100%;
     padding-right: var(--spacing-medium);
