@@ -45,8 +45,8 @@ body.light-theme {
 body.dark-theme {
     background-color: var(--color-background-dark);
     color: var(--color-text-dark);
-    --color-black: #ffffff;
-    --color-white: #000000;
+    --color-black: #000000;
+    --color-white: #ffffff;
     --color-light-gray: #1e1e1e;
     --color-gray: #343a40;
     --color-blue: #17a2b8;
