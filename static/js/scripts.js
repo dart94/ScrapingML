@@ -2,13 +2,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // Validación de formularios
     const searchForm = document.querySelector('form');
     const searchInput = document.getElementById('palabra');
-    const spinner = document.getElementById('spinner');
     const alertContainer = document.createElement('div');
 
     if (searchForm) {
         searchForm.prepend(alertContainer);
 
         searchForm.addEventListener('submit', function (event) {
+            // Eliminar el mensaje de carga si existe
+            const loadingMessage = document.getElementById('loading-message');
+            if (loadingMessage) {
+                loadingMessage.remove();
+            }
+
             if (searchInput.value.trim() === '') {
                 event.preventDefault();
                 alertContainer.innerHTML = `
@@ -20,7 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 `;
             } else {
-                spinner.style.display = 'block';
+                // Mostrar mensaje de carga
+                const loadingMessage = document.createElement('p');
+                loadingMessage.textContent = 'Buscando productos...';
+                loadingMessage.style.textAlign = 'center';
+                loadingMessage.style.fontWeight = 'bold';
+                loadingMessage.setAttribute('id', 'loading-message'); // Agrega un ID para eliminarlo más tarde
+                searchForm.append(loadingMessage);
             }
         });
     }
@@ -34,14 +45,5 @@ document.addEventListener('DOMContentLoaded', function () {
         card.addEventListener('mouseout', function () {
             this.style.transform = 'scale(1)';
         });
-    });
-
-    // Mensaje de carga
-    searchForm.addEventListener('submit', function () {
-        const loadingMessage = document.createElement('p');
-        loadingMessage.textContent = 'Buscando productos...';
-        loadingMessage.style.textAlign = 'center';
-        loadingMessage.style.fontWeight = 'bold';
-        searchForm.append(loadingMessage);
     });
 });
