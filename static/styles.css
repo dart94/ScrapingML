@@ -6,6 +6,14 @@
     --color-blue: #007bff;
     --color-dark-gray: #1e1e1e;
     --color-button-gray: #3a3a3a;
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-success: #28a745;
+    --color-info: #17a2b8;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+    --color-light: #f8f9fa;
+    --color-dark: #343a40;
 
     --spacing-small: 10px;
     --spacing-medium: 15px;
@@ -15,6 +23,13 @@
     --font-size-medium: 1rem;
     --font-size-large: 1.25rem;
     --font-size-xlarge: 1.5rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-light-gray);
+    margin: 0;
+    padding: 0;
 }
 
 .container-fluid {
@@ -58,10 +73,11 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: var(--color-white);
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: var(--color-primary);
 }
 
 h1 {
@@ -78,36 +94,33 @@ h1 {
 }
 
 .site-footer {
-    align-items: center;
     background-color: var(--color-black);
     color: var(--color-white);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    text-align: center;
     padding: var(--spacing-large);
     margin-top: 3rem;
 }
 
 .titulo {
     font-size: var(--font-size-xlarge);
-    flex-grow: 1;
-    text-align: center;
     color: var(--color-white);
 }
 
 .card {
-    background-color: var(--color-light-gray);
+    background-color: var(--color-white);
     border: 1px solid var(--color-gray);
     border-radius: 0.25rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .card-body {
@@ -116,6 +129,7 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    padding: var(--spacing-medium);
 }
 
 .card-title {
@@ -189,7 +203,7 @@ h1 {
 
 main .text-center {
     padding: var(--spacing-large);
-    background-color: var(--color-light-gray);
+    background-color: var(--color-light);
     border-radius: 8px;
 }
 
@@ -197,6 +211,8 @@ main .text-center {
     background-color: var(--color-white);
     border: 1px solid var(--color-gray);
     border-radius: 8px;
+    padding: var(--spacing-medium);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .shadow-sm {
@@ -256,6 +272,9 @@ main .text-center {
     color: var(--color-black);
 }
 
+.button:hover {
+    background-color: var(--color-primary);
+}
 
 .spinner-container {
     position: fixed;
@@ -263,14 +282,11 @@ main .text-center {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
-    /* Asegura que esté sobre todo */
 }
 
 .spinner {
     border: 8px solid #f3f3f3;
-    /* Light grey */
     border-top: 8px solid #3498db;
-    /* Blue */
     border-radius: 50%;
     width: 60px;
     height: 60px;
