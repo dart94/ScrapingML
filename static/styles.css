@@ -30,11 +30,9 @@
     --color-text-dark: #ffffff;
 }
 
-/* Estilos para el cuerpo de la página */
 body {
     font-family: Arial, sans-serif;
     background-color: var(--color-light-gray);
-    color: var(--color-text-light);
     margin: 0;
     padding: 0;
 }
@@ -46,10 +44,22 @@ body.light-theme {
 
 body.dark-theme {
     background-color: var(--color-background-dark);
-    color: var(--color-text-dark);
+    color: #000000;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-light-gray: #1e1e1e;
+    --color-gray: #343a40;
+    --color-blue: #17a2b8;
+    --color-dark-gray: #f8f9fa14;
+    --color-button-gray: #6c757d;
+    --color-primary: #17a2b8;
+    --color-secondary: #6c757d;
+    --color-light: #dee2e6;
+    --color-dark: #00000000;
+    --color-background-light: var(--color-background-dark);
+    --color-text-light: var(--color-text-dark);
 }
 
-/* Estilos para los botones */
 button {
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -73,7 +83,40 @@ body.dark-theme button:hover {
     background-color: var(--color-secondary);
 }
 
-/* Otros estilos para los elementos específicos */
+main .text-center {
+    padding: var(--spacing-large);
+    background-color: var(--color-light);
+    border-radius: 8px;
+}
+
+body.dark-theme main .text-center {
+    background-color: var(--color-dark);
+}
+
+.search-section .content {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray);
+    border-radius: 8px;
+    padding: var(--spacing-medium);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .search-section .content {
+    background-color: var(--color-dark-gray);
+    border: 1px solid var(--color-gray);
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .card-body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: var(--spacing-medium);
+    background-color: var(--color-dark-gray)
+}
+
 .container-fluid {
     width: 100%;
     padding-right: var(--spacing-medium);
@@ -82,12 +125,9 @@ body.dark-theme button:hover {
     margin-left: auto;
 }
 
-.site-footer {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    text-align: center;
-    padding: var(--spacing-large);
-    margin-top: 3rem;
+.table,
+.btn {
+    margin-top: var(--spacing-large);
 }
 
 .header-img {
@@ -138,6 +178,19 @@ h1 {
     padding: 0 var(--spacing-medium);
 }
 
+.site-footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--spacing-large);
+    margin-top: 3rem;
+}
+
+.titulo {
+    font-size: var(--font-size-xlarge);
+    color: var(--color-white);
+}
+
 .card {
     background-color: var(--color-white);
     border: 1px solid var(--color-gray);
@@ -173,6 +226,10 @@ h1 {
 .card-text {
     font-size: var(--font-size-medium);
     margin-bottom: var(--spacing-large);
+}
+
+.card a.btn {
+    margin-top: auto;
 }
 
 .card-container {
@@ -227,6 +284,67 @@ h1 {
 
 .container .d-flex img {
     margin-left: var(--spacing-medium);
+}
+
+.shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.profile-card {
+    background-color: var(--color-dark-gray);
+    padding: var(--spacing-large);
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: var(--spacing-large);
+}
+
+.location {
+    color: var(--color-blue);
+    font-size: var(--font-size-small);
+    margin: 5px 0;
+}
+
+.description {
+    color: var(--color-white);
+    font-size: var(--font-size-small);
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-small) 0;
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: var(--color-button-gray);
+    transition: background-color 0.3s;
+}
+
+.button.github {
+    background-color: var(--color-blue);
+    color: var(--color-black);
+}
+
+.button:hover {
+    background-color: var(--color-primary);
 }
 
 .spinner-container {
