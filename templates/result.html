@@ -13,15 +13,16 @@
     <header class="container-fluid d-flex justify-content-between align-items-center py-3">
         <div class="d-flex align-items-center">
             <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
-            <h1 class="m-0 titulo">Busca Precios</h1>
         </div>
-        <nav class="nav-links">
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">PriceVista</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">Sobre Mi</a></li>
-            </ul>
-        </nav>
+        <h1 class="m-0 titulo text-center flex-grow-1">Busca Precios</h1>
+        <div class="d-flex align-items-center">
+            <nav class="nav-links nav">
+                <a class="nav-link" href="/">Inicio</a>
+                <a class="nav-link" href="/about">PriceVista</a>
+                <a class="nav-link" href="/about">Sobre Mi</a>
+            </nav>
+            <img id="theme-toggle" src="static/img/Imagen7.svg" class="theme-toggle-icon ml-3" alt="Toggle Theme">
+        </div>
     </header>
 
     <div class="container">

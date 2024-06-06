@@ -12,43 +12,43 @@
     </style>
 </head>
 
-<body class="light-theme">
-    <header class="container-fluid d-flex justify-content-between align-items-center py-3">
-        <div class="d-flex align-items-center">
-            <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
-            <h1 class="m-0 titulo">Busca Precios</h1>
-        </div>
-        <nav class="nav-links">
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">PriceVista</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">Sobre Mi</a></li>
-            </ul>
+<header class="container-fluid d-flex justify-content-between align-items-center py-3">
+    <div class="d-flex align-items-center">
+        <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
+    </div>
+    <h1 class="m-0 titulo text-center flex-grow-1">Busca Precios</h1>
+    <div class="d-flex align-items-center">
+        <nav class="nav-links nav">
+            <a class="nav-link" href="/">Inicio</a>
+            <a class="nav-link" href="/about">PriceVista</a>
+            <a class="nav-link" href="/about">Sobre Mi</a>
         </nav>
-    </header>
+        <img id="theme-toggle" src="static/img/Imagen7.svg" class="theme-toggle-icon ml-3" alt="Toggle Theme">
     </div>
+</header>
+</div>
 
-    <div class="container mt-5 text-center"> <!-- Agrega la clase text-center -->
-        <div class="profile-card">
-            <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" alt="Diego Rivera"
-                class="profile-picture">
-            <h1>Diego Rivera</h1>
-            <p class="location">Hermosillo, México</p>
-            <p class="description">"Developer in progress."</p>
-            <div class="buttons">
-                <a href="https://github.com/dart94" class="button github" target="_blank">GitHub</a>
-                <a href="https://malu-cafe.netlify.app" class="button" target="_blank">Proyecto: Cafeteria</a>
-                <a href="https://bienesraicesdart.netlify.app" class="button" target="_blank">Proyecto: Bienes
-                    Raices</a>
-                <a href="https://festival-musica-hmo.netlify.app" class="button" target="_blank">Proyecto: Festival</a>
-            </div>
+<div class="container mt-5 text-center"> <!-- Agrega la clase text-center -->
+    <div class="profile-card">
+        <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" alt="Diego Rivera"
+            class="profile-picture">
+        <h1>Diego Rivera</h1>
+        <p class="location">Hermosillo, México</p>
+        <p class="description">"Developer in progress."</p>
+        <div class="buttons">
+            <a href="https://github.com/dart94" class="button github" target="_blank">GitHub</a>
+            <a href="https://malu-cafe.netlify.app" class="button" target="_blank">Proyecto: Cafeteria</a>
+            <a href="https://bienesraicesdart.netlify.app" class="button" target="_blank">Proyecto: Bienes
+                Raices</a>
+            <a href="https://festival-musica-hmo.netlify.app" class="button" target="_blank">Proyecto: Festival</a>
         </div>
     </div>
+</div>
 
-    <footer class="site-footer">
-        <p>Busca precios. Todos los derechos reservados®</p>
-    </footer>
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+<footer class="site-footer">
+    <p>Busca precios. Todos los derechos reservados®</p>
+</footer>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 
 </html>

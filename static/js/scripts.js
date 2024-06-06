@@ -49,7 +49,42 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.getElementById('theme-toggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-    document.body.classList.toggle('light-theme');
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Función para aplicar el tema basado en la preferencia del usuario o del sistema
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            body.classList.add('dark-theme');
+        } else {
+            body.classList.remove('dark-theme');
+        }
+    }
+
+    // Detectar y aplicar el tema al cargar la página
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        applyTheme('dark');
+    }
+
+    // Evento para el botón de alternancia de tema
+    toggleButton.addEventListener('click', function () {
+        if (body.classList.contains('dark-theme')) {
+            applyTheme('light');
+            localStorage.setItem('theme', 'light');
+        } else {
+            applyTheme('dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    // Escuchar los cambios en la preferencia del sistema
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) { // Solo aplicar si el usuario no ha seleccionado un tema
+            applyTheme(e.matches ? 'dark' : 'light');
+        }
+    });
 });
