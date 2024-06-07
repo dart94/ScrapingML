@@ -22,7 +22,7 @@
     --font-size-small: 0.875rem;
     --font-size-medium: 1rem;
     --font-size-large: 1.25rem;
-    --font-size-xlarge: 2rem;
+    --font-size-xlarge: 1.5rem;
 
     --color-background-light: #ffffff;
     --color-text-light: #000000;
@@ -35,6 +35,7 @@ body {
     background-color: var(--color-light-gray);
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body.light-theme {
@@ -270,7 +271,10 @@ h1 {
         margin-left: 0;
         margin-top: var(--spacing-small);
     }
+
+
 }
+
 
 .container .d-flex {
     display: flex;
@@ -297,7 +301,7 @@ h1 {
     text-align: center;
     width: 300px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: -5rem;
 }
 
 .profile-picture {
@@ -372,4 +376,38 @@ h1 {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.svg {
+    margin-top: -4%;
+}
+
+/* Estilo específico para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .svg {
+        margin-top: -15%;
+    }
+
+    .profile-card {
+        background-color: var(--color-dark-gray);
+        padding: var(--spacing-large);
+        border-radius: 10px;
+        text-align: center;
+        width: 300px;
+        margin: auto;
+        margin-top: -4rem;
+    }
+
+    .centrar {
+        margin-top: -0rem;
+    }
+
+
+}
+
+
+
+.centrar {
+    margin-top: -9rem;
+    margin-bottom: auto;
 }

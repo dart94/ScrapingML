@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -7,48 +7,54 @@
     <title>Buscador de Productos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Agrega tu CSS personalizado aquí */
-    </style>
 </head>
 
-<header class="container-fluid d-flex justify-content-between align-items-center py-3">
-    <div class="d-flex align-items-center">
-        <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
-    </div>
-    <h1 class="m-0 titulo text-center flex-grow-1">Busca Precios</h1>
-    <div class="d-flex align-items-center">
-        <nav class="nav-links nav">
-            <a class="nav-link" href="/">Inicio</a>
-            <a class="nav-link" href="/about">PriceVista</a>
-            <a class="nav-link" href="/about">Sobre Mi</a>
-        </nav>
-        <img id="theme-toggle" src="static/img/Imagen7.svg" class="theme-toggle-icon ml-3" alt="Toggle Theme">
-    </div>
-</header>
-</div>
+<body class="d-flex flex-column min-vh-100 light-theme">
+    <header class="container-fluid d-flex justify-content-between align-items-center py-3">
+        <div class="d-flex align-items-center">
+            <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
+        </div>
+        <h1 class="m-0 titulo text-center flex-grow-1">Busca Precios</h1>
+        <div class="d-flex align-items-center">
+            <nav class="nav-links nav">
+                <a class="nav-link" href="/">Inicio</a>
+                <a class="nav-link" href="/about">PriceVista</a>
+                <a class="nav-link" href="/about">Sobre Mi</a>
+            </nav>
+            <img id="theme-toggle" src="static/img/Imagen7.svg" class="theme-toggle-icon ml-3" alt="Toggle Theme">
+        </div>
+    </header>
 
-<div class="container mt-5 text-center"> <!-- Agrega la clase text-center -->
-    <div class="profile-card">
-        <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" alt="Diego Rivera"
-            class="profile-picture">
-        <h1>Diego Rivera</h1>
-        <p class="location">Hermosillo, México</p>
-        <p class="description">"Developer in progress."</p>
-        <div class="buttons">
-            <a href="https://github.com/dart94" class="button github" target="_blank">GitHub</a>
-            <a href="https://malu-cafe.netlify.app" class="button" target="_blank">Proyecto: Cafeteria</a>
-            <a href="https://bienesraicesdart.netlify.app" class="button" target="_blank">Proyecto: Bienes
-                Raices</a>
-            <a href="https://festival-musica-hmo.netlify.app" class="button" target="_blank">Proyecto: Festival</a>
+    <div class="svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
+            <path fill="#000" fill-opacity="1"
+                d="M0,128L17.1,144C34.3,160,69,192,103,181.3C137.1,171,171,117,206,106.7C240,96,274,128,309,144C342.9,160,377,160,411,149.3C445.7,139,480,117,514,101.3C548.6,85,583,75,617,74.7C651.4,75,686,85,720,96C754.3,107,789,117,823,122.7C857.1,128,891,128,926,112C960,96,994,64,1029,64C1062.9,64,1097,96,1131,138.7C1165.7,181,1200,235,1234,218.7C1268.6,203,1303,117,1337,96C1371.4,75,1406,117,1423,138.7L1440,160L1440,0L1422.9,0C1405.7,0,1371,0,1337,0C1302.9,0,1269,0,1234,0C1200,0,1166,0,1131,0C1097.1,0,1063,0,1029,0C994.3,0,960,0,926,0C891.4,0,857,0,823,0C788.6,0,754,0,720,0C685.7,0,651,0,617,0C582.9,0,549,0,514,0C480,0,446,0,411,0C377.1,0,343,0,309,0C274.3,0,240,0,206,0C171.4,0,137,0,103,0C68.6,0,34,0,17,0L0,0Z">
+            </path>
+        </svg>
+    </div>
+
+    <div class="container mt-5 text-center flex-grow-1"> <!-- Agrega la clase text-center y flex-grow-1 -->
+        <div class="profile-card">
+            <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" alt="Diego Rivera"
+                class="profile-picture">
+            <h1>Diego Rivera</h1>
+            <p class="location">Hermosillo, México</p>
+            <p class="description">"Developer in progress."</p>
+            <div class="buttons">
+                <a href="https://github.com/dart94" class="button github" target="_blank">GitHub</a>
+                <a href="https://malu-cafe.netlify.app" class="button" target="_blank">Proyecto: Cafeteria</a>
+                <a href="https://bienesraicesdart.netlify.app" class="button" target="_blank">Proyecto: Bienes
+                    Raices</a>
+                <a href="https://festival-musica-hmo.netlify.app" class="button" target="_blank">Proyecto: Festival</a>
+            </div>
         </div>
     </div>
-</div>
 
-<footer class="site-footer">
-    <p>Busca precios. Todos los derechos reservados®</p>
-</footer>
-<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <footer class="site-footer mt-3">
+        <p>Busca precios. Todos los derechos reservados®</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 
 </html>
