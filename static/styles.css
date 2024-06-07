@@ -379,7 +379,7 @@ h1 {
 }
 
 .svg {
-    margin-top: -4%;
+    margin-top: -2.599%;
 }
 
 /* Estilo específico para pantallas más pequeñas */
@@ -395,7 +395,7 @@ h1 {
         text-align: center;
         width: 300px;
         margin: auto;
-        margin-top: -4rem;
+        margin-top: -3.5rem;
     }
 
     .centrar {
