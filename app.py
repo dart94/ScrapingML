@@ -26,7 +26,7 @@ def obtener_productos(url):
         soup = bs(response.content, "html.parser")
 
         productos = []
-        contenedores_tarjetas = soup.find_all("li", class_="ui-search-layout__item")[:10]
+        contenedores_tarjetas = soup.find_all("li", class_="ui-search-layout__item")[:20]
 
         for tarjeta in contenedores_tarjetas:
             nombre_producto_elemento = tarjeta.select_one(
