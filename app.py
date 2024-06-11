@@ -1,11 +1,12 @@
-from flask import Flask, request, render_template
-import pandas as pd
+from flask import Flask, request, render_template, redirect, url_for
 import requests
 from bs4 import BeautifulSoup as bs
 import re
 import traceback
+from markupsafe import escape
 
 app = Flask(__name__)
+
 
 def formatear_palabra(palabra):
     palabra = palabra.lower()
@@ -13,8 +14,10 @@ def formatear_palabra(palabra):
     resultado = f"{palabra}#D[A:{palabra}]"
     return resultado
 
+
 def limpiar_texto(texto):
     return re.sub(r'\s+', ' ', texto.strip())
+
 
 def obtener_productos(url):
     try:
@@ -26,7 +29,8 @@ def obtener_productos(url):
         soup = bs(response.content, "html.parser")
 
         productos = []
-        contenedores_tarjetas = soup.find_all("li", class_="ui-search-layout__item")[:20]
+        contenedores_tarjetas = soup.find_all(
+            "li", class_="ui-search-layout__item")[:20]
 
         for tarjeta in contenedores_tarjetas:
             nombre_producto_elemento = tarjeta.select_one(
@@ -38,13 +42,13 @@ def obtener_productos(url):
             precio_elemento = tarjeta.select_one(
                 "span.andes-money-amount__fraction")
             precio = limpiar_texto(
-                precio_elemento.text) if precio_elemento else "No disponible"
+                precio_elemento.text).replace(',', '') if precio_elemento else "0"
 
             enlace_producto = nombre_producto_elemento['href'] if nombre_producto_elemento else "#"
 
             productos.append({
                 "nombre": nombre_producto,
-                "precio": precio,
+                "precio": float(precio),
                 "enlace": enlace_producto
             })
 
@@ -53,30 +57,46 @@ def obtener_productos(url):
         traceback.print_exc()
         return []
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        palabra = request.form['palabra']
-        busqueda = formatear_palabra(palabra)
-        url = "https://listado.mercadolibre.com.mx/" + busqueda
-
-        productos = obtener_productos(url)
-
-        if not productos:
-            error_message = "Hubo un problema al obtener los datos. Por favor, intenta nuevamente."
-            return render_template('index.html', error=error_message)
-
-        return render_template('result.html', productos=productos)
+        palabra = escape(request.form['palabra'])
+        return redirect(url_for('result', palabra=palabra))
 
     return render_template('index.html')
+
+
+@app.route('/result', methods=['GET'])
+def result():
+    palabra = escape(request.args.get('palabra', ''))
+    orden = request.args.get('orden', 'relevancia')
+    busqueda = formatear_palabra(palabra)
+    url = "https://listado.mercadolibre.com.mx/" + busqueda
+
+    productos = obtener_productos(url)
+
+    if not productos:
+        error_message = "Hubo un problema al obtener los datos. Por favor, intenta nuevamente."
+        return render_template('index.html', error=error_message)
+
+    if orden == 'precio_asc':
+        productos = sorted(productos, key=lambda x: x['precio'])
+    elif orden == 'precio_desc':
+        productos = sorted(productos, key=lambda x: x['precio'], reverse=True)
+
+    return render_template('result.html', productos=productos, palabra=palabra, orden=orden)
+
 
 @app.route('/about')
 def about():
     return render_template('about.html')
 
+
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)

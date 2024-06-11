@@ -33,6 +33,19 @@
             <h2 class="my-4">Resultados en:</h2>
             <img src="/static/img/logo.png" alt="Logo" class="ml-3">
         </div>
+        <div class="filters d-flex justify-content-between mb-3">
+            <form id="filtersForm" action="/result" method="GET">
+                <input type="hidden" name="palabra" value="{{ palabra }}">
+                <label for="orden">Ordenar por:</label>
+                <select id="orden" name="orden" class="form-control">
+                    <option value="precio_asc" {% if orden=='precio_asc' %}selected{% endif %}>Precio: Menor a Mayor
+                    </option>
+                    <option value="precio_desc" {% if orden=='precio_desc' %}selected{% endif %}>Precio: Mayor a Menor
+                    </option>
+                </select>
+                <button type="submit" class="btn btn-primary mt-2">Aplicar</button>
+            </form>
+        </div>
         <div class="card-container">
             {% for producto in productos %}
             <div class="card">
