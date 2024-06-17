@@ -9,20 +9,24 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column min-vh-100 light-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body class="light-theme d-flex flex-column min-vh-100">
     <header class="container-fluid d-flex justify-content-between align-items-center py-3">
-        <div class="d-flex align-items-center">
-            <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
-        </div>
-        <h1 class="m-0 titulo text-center flex-grow-1">Busca Precios</h1>
-        <div class="d-flex align-items-center">
-            <nav class="nav-links nav">
-                <a class="nav-link" href="/">Inicio</a>
-                <a class="nav-link" href="/about">PriceVista</a>
-                <a class="nav-link" href="/about">Sobre Mi</a>
-            </nav>
+        <img src="{{ url_for('static', filename='img/dart3.png') }}" alt="Logo" class="header-img mr-3">
+        <h1 class="m-0 titulo flex-grow-1 text-center">Busca Precios</h1>
+        <nav class="nav d-flex align-items-center">
+            <a class="nav-link" href="/">Inicio</a>
+            <a class="nav-link" href="/about">PriceVista</a>
+            <a class="nav-link" href="/about">Sobre Mi</a>
             <img id="theme-toggle" src="static/img/Imagen7.svg" class="theme-toggle-icon ml-3" alt="Toggle Theme">
-        </div>
+        </nav>
     </header>
 
     <div class="svg">
